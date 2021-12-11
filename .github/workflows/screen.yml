@@ -16,9 +16,7 @@ jobs:
         python-version: '3.x'
     - name: Build
       run: |
-        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        sudo dpkg -i google-chrome-stable_current_amd64.deb
-        sudo apt -f install
+        sudo apt install firefox
         pip3 install selenium
         python3 screen.py
     - name: Commit & Push
