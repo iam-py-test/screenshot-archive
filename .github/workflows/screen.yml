@@ -1,0 +1,30 @@
+name: Take a screenshot of google.com
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '16 20,9 * * *'
+  workflow_dispatch:
+jobs:
+  takescreenshot:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Build
+      run: |
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        sudo dpkg -i google-chrome-stable_current_amd64.deb
+        sudo apt -f install
+        pip3 install selenium
+        python3 screen.py
+    - name: Commit & Push
+      uses: actions-x/commit@v2
+      with:
+          email: noreply@example.com
+          name: Update bot
+          branch: main
+          message: Save the screenshot
