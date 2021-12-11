@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 # this shouldn't be commited
-.deb
+*.deb.1
+*.deb
