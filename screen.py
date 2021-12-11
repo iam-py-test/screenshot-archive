@@ -19,5 +19,5 @@ driver = webdriver.Chrome(service=s, options=chrome_options)
 dt = datetime.datetime.now()
 
 driver.get("https://google.com")
-driver.save_screenshot("screenshots/{}_google.png".format(dt.strftime()))
+driver.save_screenshot("screenshots/{}_google.png".format(dt.strftime("%H_%d_%m_%Y")))
 driver.close()
