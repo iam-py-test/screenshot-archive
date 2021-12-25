@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 import datetime
+import time
 
 # Set path Selenium
 CHROMEDRIVER_PATH = '/usr/local/bin/chromedriver'
@@ -19,7 +20,19 @@ driver = webdriver.Chrome(service=s, options=chrome_options)
 dt = datetime.datetime.now()
 
 driver.get("https://google.com")
+time.sleep(1)
 driver.save_screenshot("screenshots/google.com/{}_google.png".format(dt.strftime("%d_%m_%Y")))
 driver.get("https://duckduckgo.com")
+time.sleep(1)
 driver.save_screenshot("screenshots/duckduckgo.com/{}_duckduckgo.png".format(dt.strftime("%d_%m_%Y")))
+driver.get("https://twitter.com")
+time.sleep(1)
+driver.save_screenshot("screenshots/twitter.com/{}_twitter.png".format(dt.strftime("%d_%m_%Y")))
+driver.get("https://en.wikipedia.org")
+time.sleep(1)
+driver.save_screenshot("screenshots/en.wikipedia.org/{}_wikipedia.png".format(dt.strftime("%d_%m_%Y")))
+driver.get("https://github.com")
+time.sleep(1)
+driver.save_screenshot("screenshots/github.com/{}_github.png".format(dt.strftime("%d_%m_%Y")))
+time.sleep(2)
 driver.close()
