@@ -1,6 +1,9 @@
-# Screenshot archive
+# Screenshot archive (not updated)
 One screenshot a day of the Google and DuckDuckGo homepages, along with a few other websites <br>
 More websites will be added soon :)
+
+## Note:
+The script used to update this repo stopped working for an unknown reason, and I lack the time to debug it, so this repo is no longer being updated.
 
 ### Websites saved:
 - google.com
